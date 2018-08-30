@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>rem</title>
+    <style type="text/css">
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .box {
+        width: 10rem;
+        height: 10rem;
+        background-color: red;
+    }
+
+    .text {
+        color: #fff;
+        font-size: 1rem;
+    }
+    /*
+		1rem = 16px (html的font-size)
+			
+		170px等于多少rem
+		170px/16px = 170/16rem
+		*/
+    /*
+
+		rem是根据根元素html的font-size改变的
+		rem设置有两种方式
+
+		第一种：通过媒体查询 (Media Query)  设置html的font-size（太费事不可行）
+
+		第二种：通过js动态修改html的font-size  （方便易行）
+
+				有些动态修改font-size的大小会动态修改viewport的initial-scale的值
+
+		*/
+
+		/*
+		1.页面框架搭建(构建,scss)
+		2.页面样式编写
+		3.rem计算代码编写
+		4.适配多种机型大小,resize完善
+		*/
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <p class="text">hello rem</p>
+    </div>
+
+    <script type="text/javascript">
+    /*
+    	rem基准值的计算
+                        		
+        rem数值计算与构建
+
+        rem与scss结合使用
+
+        rem适配实战
+
+       	*/
+
+    // 获取视窗宽度
+    let htmlWidth = document.documentElement.clientWidth || document.body.clientWidth;
+    console.log(htmlWidth);
+
+    // 获取视窗高度
+    let htmlDom = document.getElementsByTagName('html')[0];
+    console.log(htmlDom);
+
+    // 动态设置html的font-size的大小  （根据屏幕宽度与基准值得到html的font-size的大小）
+    htmlDom.style.fontSize = htmlWidth / 10 + 'px';
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+
+@function px2rem($px){
+	$rem : 37.5px;//依据苹果6(psd文件是750)的宽度为基准值
+	@return ($px / $rem) + rem;
+}
+
+// 苹果6的视觉稿  一般psd文件是750的宽度   所以写的时候根据psd的大小除以2即可
+.hello{
+	width: px2rem(100px);
+	height: px2rem(100px);
+	&.b{
+		width: px2rem(50px);
+		height: px2rem(50px);
+	}
+}
